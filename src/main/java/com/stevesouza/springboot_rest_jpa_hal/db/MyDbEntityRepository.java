@@ -10,6 +10,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
  * fields you wish to replace), DELETE, GET (all data or 1 data). Note you pass the primary key in for most of these. You can also
  * use custom searches defined below in the request based on the name of them method.
  * 
+ * Note you can also use the 'hal browser' to do the above: http://localhost:8080/browser/index.html
  * @author stevesouza
  *
  */
