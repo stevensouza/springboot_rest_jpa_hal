@@ -2,7 +2,7 @@ package com.stevesouza.springboot_rest_jpa_hal.db;
 
 import java.util.List;
 
-import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 /**
@@ -17,8 +17,14 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 // Try with different interfaces to generate queries
 // try @Query annotation.
 @RepositoryRestResource(collectionResourceRel = "mydbentity", path = "mydbentity")
-public interface MyDbEntityRepository extends PagingAndSortingRepository<MyDbEntity, Long> {
+public interface MyDbEntityRepository extends JpaRepository<MyDbEntity, Long> {
 
+	/**
+	 * http://localhost:8080/mydbentity/search/findByStrField1?strfield1=steve
+	 * 
+	 * @param str1
+	 * @return
+	 */
 	List<MyDbEntity> findByStrField1(@Param("strfield1") String str1);
 
 }

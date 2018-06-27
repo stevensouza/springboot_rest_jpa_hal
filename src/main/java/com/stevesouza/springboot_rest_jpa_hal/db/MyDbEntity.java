@@ -1,5 +1,6 @@
 package com.stevesouza.springboot_rest_jpa_hal.db;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -24,6 +25,16 @@ public class MyDbEntity {
 	public void setStrField2(String strField2) {
 		this.strField2 = strField2;
 	}
+	
 	private String strField1;
 	private String strField2;
+	// override column name
+	@Column(name="strField3")
+	private String str;
+	public String getStrField3() {
+		return str;
+	}
+	public void setStrField3(String strField3) {
+		this.str = strField3;
+	}
 }
