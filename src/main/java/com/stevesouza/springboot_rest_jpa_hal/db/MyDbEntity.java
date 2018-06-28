@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -28,7 +27,7 @@ public class MyDbEntity {
 	// override column name
 	@Column(name="strField3")
 	@NotNull
-	@Size(min=2, message="Name should have atleast 2 characters")
+	@Size(min=2, message="Name should have at least 2 characters")
 	private String str;
 	
 	// note this will error out if value isn't between 0 and 100 however it will 
